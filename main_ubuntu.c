@@ -99,6 +99,13 @@ int		main ( void ) {
 
 	/* strcat tests */
 
+	teststr[0] = 'b';
+	teststr[1] = 'z';
+	teststr[2] = 'e';
+	teststr[3] = 'r';
+	teststr[4] = 'o';
+	teststr[5] = 0;
+	teststr[18] = 0;
 	printf(" ------------ \n");
 	printf(" -- strcat -- \n");
 	printf(" ------------ \n");
