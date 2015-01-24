@@ -1,7 +1,6 @@
 global _ft_strcat				; transmission de la fonction strcat
 
 _ft_strcat:
-	push		rax				; push dans la stack des valeurs des trois registres
 	push		rbx
 	push		rcx
 	mov			rax, rdi		; pointeur de debut de string dans rax
@@ -29,7 +28,6 @@ end:
 	mov			rax, rcx		; on assigne le ptr de debut de la premiere string dans la rax
 	pop			rcx				; récupération des trois registres depuis la stack
 	pop			rbx
-	pop			rax
 	ret							; fin de la fonction, rax est retourné
 
 ; nasm -f macho64 ft_strcat.nasm

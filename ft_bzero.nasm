@@ -1,7 +1,6 @@
 global _ft_bzero
 
 _ft_bzero:
-	push		rax
 	push		rbx
 	mov			rax, rdi
 	mov			rbx, rsi
@@ -18,6 +17,5 @@ fillzero:
 	jmp			end
 
 end:
-	pop			rax
 	pop			rbx
 	ret
