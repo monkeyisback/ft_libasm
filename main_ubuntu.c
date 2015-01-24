@@ -7,7 +7,8 @@ nasm -f elf64 ft_bzero.nasm;\
 nasm -f elf64 ft_isalpha.nasm;\
 nasm -f elf64 ft_isdigit.nasm;\
 nasm -f elf64 ft_isalnum.nasm;\
-gcc -Wall -Wextra -Werror -o asmlib ft_strcat.o ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o main_ubuntu.c; rm *.o;\
+nasm -f elf64 ft_isascii.nasm;\
+gcc -Wall -Wextra -Werror -o asmlib ft_strcat.o ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o main_ubuntu.c; rm *.o;\
 ./asmlib;\
 rm asmlib
 
@@ -21,6 +22,7 @@ void	_ft_bzero(char *str, unsigned int size);
 int		_ft_isalpha(int c);
 int		_ft_isdigit(int c);
 int		_ft_isalnum(int c);
+int		_ft_isascii(int c);
 
 
 int		main ( void ) {
@@ -172,6 +174,28 @@ int		main ( void ) {
 		printf("/!\\ erreur sur is alnum '{'\n");
 	else
 		printf("all good on is alnum");
+	printf("\n\n");
+
+	/* isascii tests */
+	printf(" ------------- \n");
+	printf(" -- isascii -- \n");
+	printf(" ------------- \n");
+	if (_ft_isascii(0) == 0)
+		printf("/!\\ erreur sur is ascii 0\n");
+	else if (_ft_isascii(63) == 0)
+		printf("/!\\ erreur sur is ascii 63\n");
+	else if (_ft_isascii(127) == 0)
+		printf("/!\\ erreur sur is ascii 127\n");
+	else if (_ft_isascii(-1) != 0)
+		printf("/!\\ erreur sur is ascii -1\n");
+	else if (_ft_isascii(-127) != 0)
+		printf("/!\\ erreur sur is ascii -127\n");
+	else if (_ft_isascii(128) != 0)
+		printf("/!\\ erreur sur is ascii 128\n");
+	else if (_ft_isascii(255) != 0)
+		printf("/!\\ erreur sur is ascii 255\n");
+	else
+		printf("all good on is ascii");
 	printf("\n\n");
 
 	return ( 0 );
