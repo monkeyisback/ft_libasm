@@ -94,6 +94,7 @@ int		main ( void ) {
 	printf("\n - result (expected : 0) : \n");
 	_ft_bzero(teststr, (unsigned int) 18);
 	write(1, teststr, 20);
+	teststr[18] = 0;
 
 	printf("\n\n");
 
@@ -105,7 +106,6 @@ int		main ( void ) {
 	teststr[3] = 'r';
 	teststr[4] = 'o';
 	teststr[5] = 0;
-	teststr[18] = 0;
 	printf(" ------------ \n");
 	printf(" -- strcat -- \n");
 	printf(" ------------ \n");
