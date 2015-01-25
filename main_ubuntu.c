@@ -246,10 +246,10 @@ int		main ( void ) {
 	printf(" ------------- \n");
 	if (_ft_isprint(0) != 0)
 		printf("/!\\ erreur sur is print 0\n");
-	else if (_ft_isprint(20) != 0)
-		printf("/!\\ erreur sur is print 20\n");
-	else if (_ft_isprint(21) == 0)
-		printf("/!\\ erreur sur is print 21\n");
+	else if (_ft_isprint(31) != 0)
+		printf("/!\\ erreur sur is print 31\n");
+	else if (_ft_isprint(32) == 0)
+		printf("/!\\ erreur sur is print 32\n");
 	else if (_ft_isprint(63) == 0)
 		printf("/!\\ erreur sur is print 63\n");
 	else if (_ft_isprint(126) == 0)

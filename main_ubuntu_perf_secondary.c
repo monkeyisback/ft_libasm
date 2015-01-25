@@ -52,7 +52,6 @@ int		main ( void ) {
 	/**********
 	** bzero **
 	**********/
-
 	j = 0;
 	i = j;
 	while (i < 100000000) {
@@ -81,6 +80,5 @@ int		main ( void ) {
 	str[7] = 0;
 	str[8] = 0;
 	str[9] = 0;
-
 	return (0);
 }

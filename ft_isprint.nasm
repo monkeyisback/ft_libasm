@@ -9,12 +9,12 @@ global _ft_isprint
 
 ; http://www.cplusplus.com/reference/cctype/isprint/
 ; For the standard ASCII character set (used by the "C" locale), printing characters are all with an ASCII code greater than 0x1f (US), except 0x7f (DEL).
-; ==> range : [21 - 126] included are true
+; ==> range : [32 - 126] included are true
 
 _ft_isprint:
 	mov			eax, edi	; 32 bit register
-	cmp			eax, 20
-	jle			endfalse	; <= 20 = false
+	cmp			eax, 31
+	jle			endfalse	; <= 31 = false
 	cmp			eax, 127
 	jge			endfalse	; >= 127 = false
 	jmp			endtrue		; true
